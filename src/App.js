@@ -11,7 +11,7 @@ const App = () => (
       <Menu />
       <div
         style={{
-          marginTop: "80px"
+          margin: "80px 0px"
         }}
       >
         <BusinessPage />

@@ -5,6 +5,7 @@ import Review from "./Review/Review";
 
 import LikeIcon from "../../lib/Icons/LikeIcon";
 import DislikeIcon from "../../lib/Icons/DislikeIcon";
+import ReviewForm from "./ReviewForm/ReviewFormContainer";
 
 const companyName = faker.company.companyName();
 const companyDesc = faker.company.catchPhrase();
@@ -13,6 +14,15 @@ const BusinessPage = () => {
   return (
     <div style={{ marginTop: "10px" }}>
       <BusinessProfile companyName={companyName} companyDesc={companyDesc} />
+      <div
+        style={{
+          width: "85%",
+          margin: "0 auto",
+          marginTop: "50px"
+        }}
+      >
+        <ReviewForm />
+      </div>
       <div
         style={{
           width: "85%",

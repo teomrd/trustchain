@@ -9,7 +9,9 @@ import {
   CardText
 } from "material-ui/Card";
 import VotingMechanism from "../VotingMechanism/VotingMechanism";
+import moment from "moment";
 import faker from "faker";
+import { grey400 } from "material-ui/styles/colors";
 
 const Review = ({ name, title, avatar, mood }) => {
   return (
@@ -26,7 +28,13 @@ const Review = ({ name, title, avatar, mood }) => {
             minHeight: "175px"
           }}
         >
-          <CardHeader title={name} subtitle={title} avatar={avatar}>
+          <CardHeader
+            title={name}
+            subtitle={`${title} - posted on ${moment(new Date()).format(
+              "Do MMM  YYYY"
+            )}`}
+            avatar={avatar}
+          >
             {mood}
           </CardHeader>
           <CardText>
