@@ -1,14 +1,22 @@
-const initialState = {
-  some: "thing"
-};
+import { reviews } from "../sampleData/reviews";
+import faker from "faker";
 
-const reviews = (state = initialState, action) => {
+const initialState = reviews;
+
+export default (state = initialState, action) => {
   switch (action.type) {
-    case "PROFILE_REQUEST_LOG_OUT_SUCCESS":
-      return initialState;
+    case "SUBMIT_REVIEW":
+      return [
+        {
+          text: action.review,
+          isGood: true,
+          name: faker.name.findName(),
+          title: faker.internet.email(),
+          avatar: faker.image.avatar()
+        },
+        ...state
+      ];
     default:
       return state;
   }
 };
-
-export default reviews;

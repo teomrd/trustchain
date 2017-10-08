@@ -26,6 +26,7 @@ class ReviewForm extends Component {
 
   handleSubmit() {
     this.props.onSubmit(this.state.review);
+    this.setState({ review: "" });
   }
 
   render() {

@@ -22,6 +22,11 @@ const mapDispatchToProps = dispatch => ({
       .catch(e => {
         console.log("error", e);
       });
+
+    dispatch({
+      type: "SUBMIT_REVIEW",
+      review: e
+    });
   }
 });
 

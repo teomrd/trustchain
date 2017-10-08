@@ -13,7 +13,7 @@ import moment from "moment";
 import faker from "faker";
 import { grey400 } from "material-ui/styles/colors";
 
-const Review = ({ name, title, avatar, mood }) => {
+const Review = ({ review, name, title, avatar, mood }) => {
   return (
     <div>
       <div
@@ -37,13 +37,7 @@ const Review = ({ name, title, avatar, mood }) => {
           >
             {mood}
           </CardHeader>
-          <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec
-            vulputate interdum sollicitudin. Nunc lacinia auctor quam sed
-            pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque
-            lobortis odio.
-          </CardText>
+          <CardText>{review}</CardText>
         </Card>
       </div>
       <div
@@ -60,6 +54,7 @@ const Review = ({ name, title, avatar, mood }) => {
 };
 
 Review.propTypes = {
+  review: PropTypes.string.isRequired,
   name: PropTypes.string,
   title: PropTypes.string,
   avatar: PropTypes.string
