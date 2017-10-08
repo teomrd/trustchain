@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import ReviewForm from "./ReviewForm";
+import createBusinessAccount from "../../../ethereum/connect";
 
 const mapStateToProps = state => ({
   some: state.some
@@ -7,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: e => {
-    console.log("onSubmit", e);
+    createBusinessAccount(e);
   }
 });
 
